@@ -1,1 +1,152 @@
+openapi: 3.0.0
+info:
+  title: Бронирование билетов API
+  version: 1.0.0
 
+paths:
+  /authenticatin/login:
+    post:
+      summary: Авторизация пользователя
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                login:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Успешная авторизация
+        '401':
+          description: Неверный логин или пароль
+
+  /authenticatin/register:
+    post:
+      summary: Регистрация нового пользователя
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                login:
+                  type: string
+                password:
+                  type: string
+                confirmPassword:
+                  type: string
+      responses:
+        '200':
+          description: Успешная регистрация
+        '400':
+          description: Пароли не совпадают или пользователь уже существует
+  /user/profile:
+    get:
+      summary: Получение информации о бронированиях пользователя
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Успешное получение информации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Успешный запрос
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        image:
+                          type: string
+                          description: Ссылка на изображение мероприятия
+                        title:
+                          type: string
+                          description: Заголовок мероприятия
+                        duration:
+                          type: integer
+                          description: Длительность мероприятия в минутах
+                        showtime:
+                          type: string
+                          description: Время показа мероприятия
+                        row_number:
+                          type: integer
+                          description: Номер ряда
+                        seat_number:
+                          type: integer
+                          description: Номер места
+        '401':
+          description: Неавторизованный запрос
+  /index/movies:
+    get:
+      summary: Получение списка активных фильмов
+      responses:
+        '200':
+          description: Успешное получение списка фильмов
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Успешный запрос
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          description: Идентификатор фильма
+                        title:
+                          type: string
+                          description: Заголовок фильма
+                        image:
+                          type: string
+                          description: Ссылка на изображение фильма
+                        duration:
+                          type: integer
+                          description: Длительность фильма в минутах
+                        showtime:
+                          type: string
+                          description: Время показа фильма
+        '500':
+          description: Ошибка сервера
+
+  /index/cinemas:
+    get:
+      summary: Получение списка кинотеатров
+      responses:
+        '200':
+          description: Успешное получение списка кинотеатров
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Успешный запрос
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Название кинотеатра
+                        address:
+                          type: string
+                          description: Адрес кинотеатра
+        '500':
+          description: Ошибка сервера
