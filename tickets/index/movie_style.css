@@ -1,0 +1,90 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Стили для секции с деталями фильма */
+.movie-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* Фон секции */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.movie-container img {
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.movie-details {
+    flex: 1; /* Растягиваем текстовую информацию о фильме на всю доступную ширину */
+    position: relative; /* Позиционируем контейнер для кнопки относительно него */
+}
+
+.movie-details h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.movie-details p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Стили для таблицы с местами */
+.seats-table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff; /* Фон таблицы */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.seats-table th,
+.seats-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.seat-checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0; /* Убираем внешние отступы у чекбоксов */
+}
+
+/* Стили для кнопки перехода на главную страницу */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute; /* Позиционируем кнопку абсолютно внутри контейнера */
+    top: 10px; /* Отступ от верхнего края контейнера */
+    right: 10px; /* Отступ от правого края контейнера */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
