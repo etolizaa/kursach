@@ -1,0 +1,96 @@
+/* Основные стили страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2, h3 {
+    color: #000000;
+}
+
+/* Стили для карточек бронирования */
+.card {
+    margin-left: 10px;
+    border: 3px solid #ddd; /* Рамка карточки */
+    border-radius: 15px; /* Скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Изменено на фиксированную высоту */
+    object-fit: cover; /* Изображение будет покрывать весь элемент img */
+    border-top-left-radius: 12px; /* Скругление верхних углов изображения */
+    border-top-right-radius: 12px;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.card-title {
+    font-size: 20px; /* Размер шрифта заголовка */
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px; /* Размер шрифта текста */
+    color: #555;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+/* Стили для контейнера заголовка и кнопки */
+.header {
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по горизонтали с промежутком */
+    align-items: center; /* Выравнивание элементов по вертикали */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+}
+
