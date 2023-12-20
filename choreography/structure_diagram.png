@@ -1,0 +1,41 @@
+@startuml
+!define RECTANGLE class
+
+RECTANGLE User {
+}
+
+RECTANGLE WebApp {
+}
+
+RECTANGLE Server {
+}
+
+RECTANGLE Movies {
+}
+
+RECTANGLE Showtimes {
+}
+
+RECTANGLE Cinemas {
+}
+
+RECTANGLE Hall {
+}
+
+participant User
+participant WebApp
+participant Server
+participant Movies
+participant Showtimes
+participant Cinemas
+
+User --> WebApp : Использует
+WebApp --> Server : Взаимодействует с
+WebApp --> Movies : Запрашивает
+WebApp --> Showtimes : Запрашивает
+WebApp --> Cinemas : Выполняет
+
+Server --> Movies : Предоставляет
+Server --> Showtimes : Предоставляет
+Server --> Cinemas : Обрабатывает
+@enduml
